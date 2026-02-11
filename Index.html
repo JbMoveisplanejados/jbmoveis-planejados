@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>JBMoveis Planejados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <img src="logo.png" alt="JBMoveis Planejados" class="logo">
+    <nav>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>JBMóveis Planejados Sob Medida</h1>
+    <p>Design, qualidade e funcionalidade para transformar seu ambiente.
+        Venha realizar seu sonho conosco! (Orçamento sem taxa por todo o RJ)
+    </p>
+    <a class="btn" href="https://wa.me/5521989300187" target="_blank">
+        Solicitar orçamento no WhatsApp
+    </a>
+</section>
+
+<section id="portfolio" class="section">
+    <h2>Portfólio</h2>
+
+    <div class="portfolio-grid">
+
+        <div class="portfolio-card">
+            <img src="images/cozinha.PNG" alt="Cozinha Planejada" onclick="openImage(this.src)">
+            <h3>Cozinha Planejada</h3>
+            <a class="portfolio-btn" href="https://wa.me/5521989300187?text=Olá! Gostaria de um orçamento para uma cozinha planejada." target="_blank">
+                Quero um projeto assim
+            </a>
+        </div>
+
+        <div class="portfolio-card">
+            <img src="images/quarto.PNG" alt="Quarto Sob Medida" onclick="openImage(this.src)">
+            <h3>Quarto Sob Medida</h3>
+            <a class="portfolio-btn" href="https://wa.me/5521989300187?text=Olá! Gostaria de um orçamento para um quarto planejado." target="_blank">
+                Quero um projeto assim
+            </a>
+        </div>
+
+        <div class="portfolio-card">
+            <img src="images/sala.PNG" alt="Sala Planejada" onclick="openImage(this.src)">
+            <h3>Sala Planejada</h3>
+            <a class="portfolio-btn" href="https://wa.me/5521989300187?text=Olá! Gostaria de um orçamento para uma sala planejada." target="_blank">
+                Quero um projeto assim
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Modal imagem -->
+<div id="imageModal" class="modal" onclick="closeImage()">
+    <img id="modalImg">
+</div>
+
+
+<section id="loja" class="section">
+    <h2>Modelos Planejados</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>ENTRE JÁ EM CONTATO E SOLICITE O SEU ORÇAMENTO!</h3>
+            <a class="btn small" href="https://wa.me/5521989300187">Solicitar orçamento</a>
+        </div>
+        <d
