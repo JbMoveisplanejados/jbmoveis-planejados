@@ -1,9 +1,16 @@
 const modal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImg');
 const modalCaption = document.getElementById('modalCaption');
+const modalFrame = document.getElementById('modalImageFrame');
+let modalOpener;
 
 for (const button of document.querySelectorAll('[data-image]')) {
   button.addEventListener('click', () => {
+    modalOpener = button;
+    const isCatalogPhoto = button.dataset.photoColumn !== undefined;
+    modalFrame.classList.toggle('catalog-photo-frame', isCatalogPhoto);
+    modalFrame.style.setProperty('--photo-left', `${-100 * Number(button.dataset.photoColumn || 0)}%`);
+    modalFrame.style.setProperty('--photo-top', `${-100 * Number(button.dataset.photoRow || 0)}%`);
     modalImage.src = button.dataset.image;
     modalImage.alt = button.querySelector('img').alt;
     modalCaption.textContent = button.dataset.caption;
@@ -18,6 +25,7 @@ modal.addEventListener('click', (event) => {
 });
 modal.addEventListener('close', () => {
   document.body.classList.remove('modal-open');
+  modalOpener?.focus({preventScroll: true});
 });
 document.getElementById('year').textContent = new Date().getFullYear();
 

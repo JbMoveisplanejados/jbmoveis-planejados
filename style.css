@@ -777,7 +777,7 @@ body.modal-open {
   transition: transform .2s;
 }
 .catalog-image:hover img {
-  transform: translateY(-4px);
+  transform: none;
 }
 .catalog-image>span {
   position: absolute;
@@ -840,9 +840,6 @@ body.modal-open {
 .catalog-empty p {
   font-size: 13px;
   color: var(--muted);
-}
-#modalImg[src$=".svg"] {
-  width: min(680px, 85vw);
 }
 @media(max-width: 950px) {
   .header nav {
@@ -907,5 +904,62 @@ body.modal-open {
   .catalog-details>a {
     font-size: 11px;
     gap: 5px;
+  }
+}
+
+/* Each photo sheet contains eight distinct references; show only the chosen photo. */
+.catalog-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  align-self: center;
+  overflow: hidden;
+  padding: 0;
+}
+.catalog-image img,
+.catalog-photo-frame img {
+  position: absolute;
+  left: var(--photo-left, 0%);
+  top: var(--photo-top, 0%);
+  width: 400%;
+  height: 200%;
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  transform: none;
+}
+.catalog-image>span {
+  left: 10px;
+  bottom: 10px;
+  background: rgba(247, 245, 239, .95);
+  padding: 5px 9px;
+  color: var(--ink);
+}
+#modalImageFrame:not(.catalog-photo-frame) img {
+  max-height: 75dvh;
+  width: auto;
+  max-width: 88vw;
+  object-fit: contain;
+  margin: auto;
+}
+.catalog-photo-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  width: min(80vw, 52.5dvh, 560px);
+  margin: auto;
+}
+.catalog-details h3 {
+  font-size: 22px;
+}
+@media(max-width: 640px) {
+  .catalog-card {
+    grid-template-columns: 43% minmax(0, 1fr);
+  }
+  .catalog-details {
+    padding: 14px 12px;
+  }
+  .catalog-details h3 {
+    font-size: 21px;
   }
 }
