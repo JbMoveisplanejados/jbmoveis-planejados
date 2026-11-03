@@ -1,9 +1,22 @@
-console.log("JBMoveis Planejados carregado com sucesso");
-function openImage(src) {
-    document.getElementById("imageModal").style.display = "flex";
-    document.getElementById("modalImg").src = src;
+const modal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImg');
+const modalCaption = document.getElementById('modalCaption');
+
+for (const button of document.querySelectorAll('[data-image]')) {
+  button.addEventListener('click', () => {
+    modalImage.src = button.dataset.image;
+    modalImage.alt = button.querySelector('img').alt;
+    modalCaption.textContent = button.dataset.caption;
+    modal.showModal();
+    document.body.classList.add('modal-open');
+  });
 }
 
-function closeImage() {
-    document.getElementById("imageModal").style.display = "none";
-}
+modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) modal.close();
+});
+modal.addEventListener('close', () => {
+  document.body.classList.remove('modal-open');
+});
+document.getElementById('year').textContent = new Date().getFullYear();
