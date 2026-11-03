@@ -680,3 +680,232 @@ body.modal-open {
 .skip-link:not(:focus-visible) {
   transform:translateY(-200px);
 }
+
+/* Catalog: illustrations stay beside the descriptions on desktop and mobile. */
+[hidden] {
+  display: none !important;
+}
+.catalog {
+  border-top: 1px solid var(--line);
+}
+.catalog-intro {
+  max-width: 670px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.catalog-disclaimer {
+  max-width: 760px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.catalog-tools {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 24px;
+  background: #eeeee5;
+}
+.catalog-field {
+  flex: 1;
+  min-width: 0;
+}
+.catalog-field label {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+.catalog-field input,
+.catalog-field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid #b9bfb1;
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+}
+.catalog-field input:focus-visible,
+.catalog-field select:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.catalog-clear {
+  min-height: 48px;
+  padding: 10px 5px;
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: var(--ink);
+  font-size: 12px;
+  cursor: pointer;
+}
+.catalog-status {
+  margin: 22px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.catalog-card {
+  display: grid;
+  grid-template-columns: 42% minmax(0, 1fr);
+  background: #fffdf8;
+  border: 1px solid var(--line);
+}
+.catalog-image {
+  padding: 10px 0 24px;
+  min-width: 0;
+  position: relative;
+  background: #efeee5;
+  border: 0;
+  cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.catalog-image img {
+  width: 100%;
+  height: auto;
+  transition: transform .2s;
+}
+.catalog-image:hover img {
+  transform: translateY(-4px);
+}
+.catalog-image>span {
+  position: absolute;
+  bottom: 9px;
+  left: 12px;
+  color: #555f4f;
+  font-size: 10px;
+}
+.catalog-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px;
+}
+.catalog-category {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #745137;
+  line-height: 1.6;
+}
+.catalog-details h3 {
+  font: 23px/1.15 var(--serif);
+  margin: 9px 0 12px;
+}
+.catalog-details p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.catalog-details>a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 0 0;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+}
+.catalog-details>a:hover {
+  color: var(--accent);
+}
+.catalog-more {
+  border: 0;
+  margin: 32px auto 0;
+  display: flex;
+  cursor: pointer;
+}
+.catalog-empty {
+  padding: 40px 24px;
+  text-align: center;
+  background: #eeeee5;
+}
+.catalog-empty h3 {
+  font: 28px var(--serif);
+  margin-bottom: 14px;
+}
+.catalog-empty p {
+  font-size: 13px;
+  color: var(--muted);
+}
+#modalImg[src$=".svg"] {
+  width: min(680px, 85vw);
+}
+@media(max-width: 950px) {
+  .header nav {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .catalog-details {
+    padding: 16px;
+  }
+  .catalog-details h3 {
+    font-size: 21px;
+  }
+}
+@media(max-width: 640px) {
+  .header {
+    flex-wrap: wrap;
+    row-gap: 18px;
+  }
+  .header nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 11px;
+  }
+  .header nav>a:nth-child(2) {
+    display: inline;
+  }
+  .header nav>a[href="#como-funciona"] {
+    display: none;
+  }
+  .catalog-tools {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+    gap: 16px;
+  }
+  .catalog-clear {
+    align-self: flex-start;
+    min-height: 36px;
+  }
+  .catalog-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .catalog-card {
+    grid-template-columns: 38% minmax(0, 1fr);
+  }
+  .catalog-details {
+    padding: 16px 13px;
+  }
+  .catalog-details h3 {
+    font-size: 22px;
+  }
+  .catalog-details p {
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+  .catalog-category {
+    font-size: 8px;
+  }
+  .catalog-details>a {
+    font-size: 11px;
+    gap: 5px;
+  }
+}
